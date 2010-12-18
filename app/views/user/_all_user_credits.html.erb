@@ -1,0 +1,18 @@
+<div class="form_row">
+  <table border="1" cellpadding="10" cellspacing ="1" width="50%">
+    <% User.all.each do |user| %>
+    <tr>
+        <% paid_amount = 0 %>
+        <% Item.find_all_by_user_id(user.id).each do |item| %>
+          <% paid_amount += item.amount %>
+        <% end %>
+        <% got_amount = 0 %>
+        <% UserItem.find_all_by_user_id(user.id).each do |item| %>
+          <%  got_amount +=  item.amount %>
+        <% end %>
+      <th > <%= user.screen_name %> </th>
+      <td> <%= got_amount - paid_amount%> </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

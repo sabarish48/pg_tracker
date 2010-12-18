@@ -1,0 +1,42 @@
+<div id="divCalendar" class="calendar_container">
+  <div class="calendar_layout">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tr class="calendar_title">
+        <td class="float_left" onclick="PreviewMonth();">
+          <a ><%= image_tag('calendar_left.gif')%></a>
+        </td>
+        <td class="text_center" colspan="5" style="cursor:default;" id="CalendarTitle">
+        </td>
+        <td class="float_right" onclick="NextMonth();">
+          <a class="float_right"><%= image_tag('calendar_right.gif')%></a>
+        </td>
+      </tr>
+    </table>
+    <div class="calendar_body">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tr style="cursor:default;">
+          <th>Su</th>
+          <th>Mo</th>
+          <th>Tu</th>
+          <th>We</th>
+          <th>Th</th>
+          <th>Fr</th>
+          <th>Sa</th>
+        </tr>
+        <% 6.times do |week| %>
+          <tr>
+            <% 7.times do |day| %>
+              <td>
+                <div id="day_<%=7*week+day+1%>" class="calendar_day">
+                </div>
+              </td>
+            <%end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="calendar_footer">
+      Today: <%= Date.today.to_s(:long) %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<% form_for :item do |form| %>
+  <fieldset>
+    <legend> All Transaction Credits </legend>
+      <%= render :partial => "all_user_credits",
+             :locals  => { :form => form } %>
+  </fieldset>
+<% end %>

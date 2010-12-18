@@ -1,0 +1,14 @@
+<h2><%= @user.screen_name %> </h2><br/>
+<br/>
+<fieldset>
+  <legend>Profile Info</legend>
+  <div class="form_row">
+  <label for="screen_name"> Screen name:</label>
+  <%= @user.screen_name %>
+  </div>
+  <div class="form_row">
+  <label for="email">Email:</label>
+  <%= @user.email %>
+  </div>  
+</fieldset><br/><br/>
+<%= link_to "Edit Profile info", :action => "edit" %>

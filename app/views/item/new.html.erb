@@ -1,0 +1,19 @@
+<% form_for :item do |form| %>
+<fieldset>
+  <legend>Enter Item Details</legend>
+  <%= error_messages_for 'item' %>
+  <%= render :partial => "name_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "date_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "amount_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "type_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "user_field_row",
+             :locals  => { :form => form } %>
+  <div class="form_row">
+    <%= submit_tag "Add Item!", :class => "submit" %>
+  </div>
+</fieldset>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="form_row">  
+  <% paid_amount = 0 %>
+  <% Item.find_all_by_user_id(user.id).each do |item| %>
+    <% paid_amount += item.amount %>
+  <% end %>
+  <% got_amount = 0 %>
+  <% items.each do |item| %>
+      <%  got_amount +=  UserItem.find_by_item_id_and_user_id(item.id, user.id).amount %>
+  <% end %>
+  <%= got_amount - paid_amount %>
+</div>

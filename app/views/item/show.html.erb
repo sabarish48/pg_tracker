@@ -1,0 +1,32 @@
+<% form_for :item do |form| %>
+  <fieldset>
+    <legend>Transaction Details</legend>
+    <div class="form_row">
+      <table border="1" cellpadding="10" cellspacing ="1">
+        <tr>
+          <th> Transaction Name </th>
+          <td> <%= @item.name %> </td>
+        </tr>
+        <tr>
+          <th> Transaction Amount </th>
+          <td> <%= @item.amount %> </td>
+        </tr>
+        <tr>
+          <th> Amount Paid by </th>
+          <td> <%=  User.find(@item.user_id).screen_name %> </td>
+        </tr>
+        <tr>
+          <th> Transaction Date </th>
+          <td> <%=  @item.transaction_date %> </td>
+        </tr>
+        <tr>
+          <th> Amount Shared between </th>
+          <td> <%= get_item_users(@item) %> </td>
+        </tr>
+      </table>
+    </div>
+    <% if @user.id == @item.user_id %>
+      <%= link_to "Revert Transaction", :id => @item.id ,:action => "delete" %><br/>
+    <% end %>
+  </fieldset>
+<% end %>
