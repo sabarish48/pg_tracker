@@ -3,8 +3,9 @@ module ItemHelper
   def users_form_column
     users_str = ""
     User.all.each do |user|
+      users_str += "<br/>"
       users_str += check_box_tag "record[users][]", user.id
-      users_str += "#{user.screen_name.titleize} "
+      users_str += "#{user.screen_name.titleize}"
     end
     users_str
   end
