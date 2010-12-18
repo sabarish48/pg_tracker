@@ -76,7 +76,7 @@ class UserController < ApplicationController
   def logout
     User.logout!(session, cookies)
     flash[:notice] = "Logged out"
-    redirect_to :action => "index", :controller => "site"
+    redirect_to :action => "login", :controller => "user"
   end
 
 private
