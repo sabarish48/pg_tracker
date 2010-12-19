@@ -1,0 +1,38 @@
+<br/>
+<%= link_to "View All Expenditures", :action => "index" %><br/><br/>
+<% form_for :expense do |form| %>
+  <div id= "selection_row">
+    <fieldset>
+      <legend>Enter Search Options</legend>
+      <span style ="float: left">
+        <label id="from_date">From:</label>
+        <%= javascript_tag "jQuery(function() {jQuery(\"#datepicker\").datepicker();});" %>
+        <%= text_field_tag 'expense_from_date','', :id=> "datepicker", :size => 14 %>
+      </span><span>
+        <label id="to_date">To:</label>
+        <%= javascript_tag "jQuery(function() {jQuery(\"#todatepicker\").datepicker();});" %>
+        <%= text_field_tag 'expense_to_date', '',:id=> "todatepicker", :size => 14 %>
+      </span><br/><br/>
+      <div class="form_row">
+        <%= submit_tag 'Search!', :class => "submit", :controller => "expense", :action => "search" %>
+      </div>
+    </fieldset>
+  </div>
+<%  end %>
+<br/>
+<% form_for :expense do |form| %>
+  <fieldset>
+    <legend>Your Total Expense </legend>
+      <%= render :partial => "total_expense_field_row",
+             :locals  => { :form => form, :expenditures =>@expenditures, :user => @user } %>
+  </fieldset>
+<% end %>
+<br/>
+<% form_for :expense do |form| %>
+  <fieldset>
+    <legend>Your Expenditure Details</legend>
+      <%= render :partial => "all_expense_field_row",
+             :locals  => { :form => form, :expenditures =>@expenditures, :user => @user } %>
+  </fieldset>
+<% end %>
+<br/><br/>

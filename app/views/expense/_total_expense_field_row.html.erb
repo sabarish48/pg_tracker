@@ -1,0 +1,7 @@
+<div class="form_row">
+  <% expense_amount = 0 %>
+  <% expenditures.each do |expense| %>  
+    <% expense_amount += expense.amount %>
+  <% end %>  
+  <%= expense_amount %>
+</div>

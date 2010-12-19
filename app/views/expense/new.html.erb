@@ -1,0 +1,15 @@
+<% form_for :expense do |form| %>
+<fieldset>
+  <legend>Enter Expenditure Details</legend>
+  <%= error_messages_for 'expense' %>
+  <%= render :partial => "name_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "date_field_row",
+             :locals  => { :form => form } %>
+  <%= render :partial => "amount_field_row",
+             :locals  => { :form => form } %>
+  <div class="form_row">
+    <%= submit_tag "Add Expenditure!", :class => "submit" %>
+  </div>
+</fieldset>
+<% end %>

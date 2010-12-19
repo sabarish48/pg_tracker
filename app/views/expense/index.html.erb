@@ -1,0 +1,19 @@
+<br/>
+<%= link_to "Add New Expenditure", :action => "new" %><br/><br/>
+<%= link_to "View Expenditure between periods", :action => "search" %><br/><br/>
+<% form_for :expense do |form| %>
+  <fieldset>
+    <legend>Your Total Expense </legend>
+      <%= render :partial => "total_expense_field_row",
+             :locals  => { :form => form, :expenditures =>@expenditures, :user => @user } %>
+  </fieldset>
+<% end %>
+<br/>
+<% form_for :expense do |form| %>
+  <fieldset>
+    <legend>Your Expenditure Details</legend>
+      <%= render :partial => "all_expense_field_row",
+             :locals  => { :form => form, :expenditures =>@expenditures, :user => @user } %>
+  </fieldset>
+<% end %>
+<br/><br/>

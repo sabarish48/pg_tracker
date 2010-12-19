@@ -38,7 +38,8 @@ body {
   border-bottom: 2px dotted blue;
 }
 #content {
-  height: 600px;
+  height: auto;
+  min-height: 600px;
   background: #C8BBBE;
   padding: 1em;
 }

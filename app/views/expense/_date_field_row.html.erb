@@ -1,0 +1,5 @@
+<div class="form_row">
+  <label for="date">Date:</label>
+  <%= javascript_tag "jQuery(function() {jQuery(\"#datepicker\").datepicker();});" %>
+  <%= form.text_field :expense_date, :id=> "datepicker", :size => 14%>
+</div>

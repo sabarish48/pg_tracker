@@ -1,0 +1,16 @@
+<div class="form_row">
+  <table border="1" cellpadding="10" cellspacing ="1">
+    <tr>
+      <th> Expenditure Name </th>
+      <th> Date </th>
+      <th> Amount </th>      
+    </tr>
+  <% expenditures.sort_by(&:expense_date).each do |expense| %>
+    <tr>
+      <td><%= expense.name %> <%= link_to "  Delete",:id => expense.id, :action => "delete" %></td>
+      <td><%= expense.expense_date %></td>
+      <td><%= expense.amount %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
