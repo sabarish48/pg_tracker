@@ -6,7 +6,8 @@ body {
 }
 
 #whole_page {
-  width: 50em;
+  width: auto;
+  min-width: 50em;
   margin: auto;
   padding: 0;
   text-align: left;
