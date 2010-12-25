@@ -26,7 +26,7 @@ class ItemController < ApplicationController
     when "amount_reverse"   then "amount DESC"
     when "date_reverse" then "transaction_date DESC"
     end
-    @all_items = Item.paginate(:all, :conditions => ["(id IN (?) OR user_id = ?) AND name like ?", user_items, @user.id, "%#{params[:search]}%"], :order => sort, :page => current_page, :per_page => 10)
+    @all_items = Item.paginate(:all, :conditions => ["(id IN (?) OR user_id = ?) AND name like ?", user_items, @user.id, "%#{params[:search]}%"], :order => sort || "transaction_date DESC", :page => current_page, :per_page => 10)
   end
 
   def new
