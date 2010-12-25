@@ -12,7 +12,7 @@
       <th <%= sort_th_class_helper("date") %>> <%= sort_link_helper "Transaction Date", "date" %> </th>
       <th> Your Share </th>
     </tr>
-    <% all_items.sort_by(&:transaction_date).each do |item| %>
+    <% all_items.each do |item| %>
       <tr>
         <td><%= link_to item.name, :id => item.id, :action => "show" %></td>
         <td><%= User.find(item.user_id).screen_name %></td>
