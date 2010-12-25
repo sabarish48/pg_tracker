@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   include ApplicationHelper
-  skip_before_filter :verify_authenticity_token 
+  skip_before_filter :verify_authenticity_token
+  before_filter :login_required, :only=>['welcome', 'change_password', 'hidden']
   #before_filter :protect, :only => [:index, :edit]
 
   def index
@@ -20,15 +21,14 @@ class UserController < ApplicationController
       @user = User.new(:remember_me => remember_me_string)
     elsif param_posted?(:user)
       @user = User.new(params[:user])
-      user = User.find_by_screen_name_and_password(@user.screen_name,
-        @user.password)      
+      user = User.authenticate(@user.screen_name, @user.password)      
       if user
         user.login!(session)
         @user.remember_me? ? user.remember!(cookies) : user.forget!(cookies)
         flash[:notice] = "Welcome #{user.screen_name}!"
         redirect_to_forwarding_url
       else
-        @user.clear_password!
+        #@user.clear_password!
         flash[:notice] = "Invalid screen name/password combination"
       end
     end
@@ -39,11 +39,12 @@ class UserController < ApplicationController
     if param_posted?(:user)
       @user = User.new(params[:user])
       if @user.save
+        session[:user] = User.authenticate(@user.screen_name, @user.password)
         @user.login!(session)
         flash[:notice] = "User #{@user.screen_name} created!"
         redirect_to_forwarding_url        
       else
-        @user.clear_password!
+        #@user.clear_password!
       end
     end
   end
@@ -58,15 +59,17 @@ class UserController < ApplicationController
       when "email"
         try_to_update @user, attribute
       when "password"
-        if @user.correct_password?(params)
-          try_to_update @user, attribute
+        @user.update_attributes(:password=>params[:user][:password], :password_confirmation => params[:user][:password_confirmation])        
+        if @user.save
+          flash[:notice] = "User #{attribute} updated."
+          redirect_to :action => "index"
         else
           @user.password_errors(params)
         end
       end
     end
     # For security purposes, never fill in password fields.
-    @user.clear_password!
+    #@user.clear_password!
   end
 
   def show
@@ -77,6 +80,25 @@ class UserController < ApplicationController
     User.logout!(session, cookies)
     flash[:notice] = "Logged out"
     redirect_to :action => "login", :controller => "user"
+  end
+  
+  def forgot_password
+    @title = "Forgot Password"    
+    if request.post?
+      user = User.find_by_email(params[:user][:email])
+      if user and user.send_new_password
+        flash[:notice]  = "A new password has been sent by email."
+        redirect_to :action=>'login'
+      else
+        flash[:warning]  = "Couldn't send password"
+      end
+    end
+  end
+
+  def welcome
+  end
+
+  def hidden
   end
 
 private

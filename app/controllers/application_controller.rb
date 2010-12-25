@@ -19,5 +19,15 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def login_required
+    if session[:user]
+      return true
+    end
+    flash[:warning]='Please login to continue'
+    session[:return_to]=request.request_uri
+    redirect_to :controller => "user", :action => "login"
+    return false 
+  end
+
 
 end

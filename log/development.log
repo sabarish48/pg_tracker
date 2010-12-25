@@ -26549,3 +26549,1900 @@ Rendering expense/index
 Rendered expense/_total_expense_field_row (1.6ms)
 Rendered expense/_all_expense_field_row (1.6ms)
 Completed in 32ms (View: 9, DB: 3) | 200 OK [http://localhost/expense]
+  [4;36;1mSQL (89.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (131.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (75.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101218045032)
+Migrating to AddUserTimestamps (20101218045609)
+Migrating to CreateSessions (20101218051508)
+Migrating to AddAuthorizationToken (20101218055250)
+Migrating to CreateItems (20101218095921)
+Migrating to CreateUserItems (20101218101102)
+Migrating to AddTypeToItems (20101218103714)
+Migrating to CreateExpenses (20101219083206)
+Migrating to AddHashedPasswordToUsers (20101225190752)
+  [4;35;1mSQL (244.5ms)[0m   [0mALTER TABLE `users` ADD `hashed_password` varchar(255)[0m
+  [4;36;1mSQL (25.6ms)[0m   [0;1mALTER TABLE `users` ADD `salt` varchar(255)[0m
+  [4;35;1mSQL (5.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101225190752')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (22.9ms)[0m   [0mSHOW FIELDS FROM `expenses`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `expenses`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `expenses`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSHOW FIELDS FROM `items`[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mdescribe `items`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `items`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `sessions`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mdescribe `sessions`[0m
+  [4;35;1mSQL (27.2ms)[0m   [0mSHOW KEYS FROM `sessions`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `user_items`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mdescribe `user_items`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `user_items`[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (59.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:06:48) [GET]
+  [4;35;1mUser Columns (52.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (6.5ms)
+Rendered user/_password_field_row (14.3ms)
+Completed in 239ms (View: 94, DB: 187) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:06:55) [GET]
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 20ms (View: 17, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:09:20) [GET]
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 22ms (View: 18, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:09:34) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 35ms (View: 4, DB: 2) | 200 OK [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:11:05) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 46ms (View: 16, DB: 3) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:11:15) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 19ms (View: 4, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:13:19) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 8409ms (View: 22, DB: 3) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:13:43) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;36;1mUser Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` IS NULL) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 32062ms (View: 7, DB: 5) | 200 OK [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:14:37) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (48.9ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (15.9ms)[0m   [0;1mROLLBACK[0m
+
+NoMethodError (undefined method `email' for "sabarishsankar89@gmail.com":String):
+  app/models/user_mailer.rb:14:in `setup_email'
+  app/models/user_mailer.rb:3:in `forgot_password'
+  app/models/user.rb:113:in `send_new_password'
+  app/controllers/user_controller.rb:88:in `forgot_password'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (53.7ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:15:37) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+Rendered user_mailer/_footer (1.1ms)
+Rendered user_mailer/_footer (6.8ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:15:37 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTrackerPGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d1657f14909f_2130..fdba47472185
+
+
+--mimepart_4d1657f14909f_2130..fdba47472185
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: zabigKNg2g
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d1657f14909f_2130..fdba47472185
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  <h3>Please note the following login details of your PGtracker</h3><br/>=
+
+  Screen Name: sabarish
+  <br/><br/>
+  Password: zabigKNg2g
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d1657f14909f_2130..fdba47472185--
+
+Net::SMTPAuthenticationError (530 5.7.0 Must issue a STARTTLS command first. 34sm9220020ibi.2
+):
+  /usr/lib/ruby/1.8/net/smtp.rb:942:in `check_auth_response'
+  /usr/lib/ruby/1.8/net/smtp.rb:733:in `auth_plain'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `send'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `authenticate'
+  /usr/lib/ruby/1.8/net/smtp.rb:566:in `do_start'
+  /usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:113:in `send_new_password'
+  app/controllers/user_controller.rb:88:in `forgot_password'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.8ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:18:23) [GET]
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 58ms (View: 51, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:18:27) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendered user_mailer/_footer (0.8ms)
+Rendered user_mailer/_footer (0.6ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:18:27 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTrackerPGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d16589c58e0_2158..fdb8e683a114
+
+
+--mimepart_4d16589c58e0_2158..fdb8e683a114
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: OiLbcwjrR5
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d16589c58e0_2158..fdb8e683a114
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  <h3>Please note the following login details of your PGtracker</h3><br/>=
+
+  Screen Name: sabarish
+  <br/><br/>
+  Password: OiLbcwjrR5
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d16589c58e0_2158..fdb8e683a114--
+
+Net::SMTPAuthenticationError (530 5.7.0 Must issue a STARTTLS command first. 14sm9053365ico.8
+):
+  /usr/lib/ruby/1.8/net/smtp.rb:942:in `check_auth_response'
+  /usr/lib/ruby/1.8/net/smtp.rb:733:in `auth_plain'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `send'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `authenticate'
+  /usr/lib/ruby/1.8/net/smtp.rb:566:in `do_start'
+  /usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:113:in `send_new_password'
+  app/controllers/user_controller.rb:88:in `forgot_password'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.6ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:23:10) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>""}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`email` = '') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 75ms (View: 52, DB: 3) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:23:13) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendered user_mailer/_footer (0.8ms)
+Rendered user_mailer/_footer (1.0ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:23:13 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTrackerPGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d1659b96eeed_21bf..fdb9d46d4114
+
+
+--mimepart_4d1659b96eeed_21bf..fdb9d46d4114
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: 4gOTS0TXZq
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d1659b96eeed_21bf..fdb9d46d4114
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  <h3>Please note the following login details of your PGtracker</h3><br/>=
+
+  Screen Name: sabarish
+  <br/><br/>
+  Password: 4gOTS0TXZq
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d1659b96eeed_21bf..fdb9d46d4114--
+
+Net::SMTPAuthenticationError (530 5.7.0 Must issue a STARTTLS command first. l26sm9056493icl.4
+):
+  /usr/lib/ruby/1.8/net/smtp.rb:948:in `check_auth_continue'
+  /usr/lib/ruby/1.8/net/smtp.rb:740:in `auth_login'
+  /usr/lib/ruby/1.8/net/smtp.rb:921:in `critical'
+  /usr/lib/ruby/1.8/net/smtp.rb:739:in `auth_login'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `send'
+  /usr/lib/ruby/1.8/net/smtp.rb:725:in `authenticate'
+  /usr/lib/ruby/1.8/net/smtp.rb:566:in `do_start'
+  /usr/lib/ruby/1.8/net/smtp.rb:525:in `start'
+  app/models/user.rb:113:in `send_new_password'
+  app/controllers/user_controller.rb:88:in `forgot_password'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:24:19) [GET]
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 33ms (View: 29, DB: 2) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:24:22) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendered user_mailer/_footer (0.6ms)
+Rendered user_mailer/_footer (0.6ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:24:22 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTrackerPGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d1659fece7e3_21c6..fdb8b74721e
+
+
+--mimepart_4d1659fece7e3_21c6..fdb8b74721e
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: EEE22EA8et
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d1659fece7e3_21c6..fdb8b74721e
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  <h3>Please note the following login details of your PGtracker</h3><br/>=
+
+  Screen Name: sabarish
+  <br/><br/>
+  Password: EEE22EA8et
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d1659fece7e3_21c6..fdb8b74721e--
+Redirected to http://localhost:3000/
+Completed in 5131ms (DB: 2) | 302 Found [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:24:28) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (3.0ms)
+Rendered user/_password_field_row (32.0ms)
+Completed in 68ms (View: 53, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:25:22) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"EEE22EA8et ", "screen_name"=>"sabarish"}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:119:in `encrypt'
+  app/models/user.rb:105:in `authenticate'
+  app/controllers/user_controller.rb:24:in `login'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.2ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:30:56) [GET]
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (11.7ms)
+Rendered user/_password_field_row (12.8ms)
+Completed in 87ms (View: 64, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:30:59) [GET]
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 39ms (View: 35, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:31:03) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Rendered user_mailer/_footer (11.8ms)
+Rendered user_mailer/_footer (0.6ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:31:03 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d165b8f8f45f_21fc..fdb8a03b2154
+
+
+--mimepart_4d165b8f8f45f_21fc..fdb8a03b2154
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: 1QGmmsswUk
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d165b8f8f45f_21fc..fdb8a03b2154
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  Please note the following login details of your PGtracker<br/>
+  <b>Screen Name: </b>sabarish
+  <br/><br/>
+  <b>Password: </b>1QGmmsswUk
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d165b8f8f45f_21fc..fdb8a03b2154--
+Redirected to http://localhost:3000/
+Completed in 4424ms (DB: 2) | 302 Found [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:31:07) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.3ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 23ms (View: 9, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:32:36) [GET]
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 42ms (View: 37, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:32:39) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendered user_mailer/_footer (0.9ms)
+Rendered user_mailer/_footer (0.8ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:33:03 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d165c07d4f49_2203..fdb7eeda615c
+
+
+--mimepart_4d165c07d4f49_2203..fdb7eeda615c
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: h4qrRQAyyf
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d165c07d4f49_2203..fdb7eeda615c
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  Please note the following login details of your PGtracker<br/><br/>
+  <b>Screen Name: </b>sabarish
+  <br/><br/>
+  <b>Password: </b>h4qrRQAyyf
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d165c07d4f49_2203..fdb7eeda615c--
+Redirected to http://localhost:3000/
+Completed in 28899ms (DB: 2) | 302 Found [http://localhost/user/forgot_password]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:33:08) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (3.5ms)
+Rendered user/_password_field_row (1.6ms)
+Completed in 43ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:35:03) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"h4qrRQAyyf ", "screen_name"=>"sabarish"}}
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:120:in `encrypt'
+  app/models/user.rb:105:in `authenticate'
+  app/controllers/user_controller.rb:24:in `login'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (141.4ms)
+Rendered rescues/_request_and_response (2.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (183.9ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101218045032)
+Migrating to AddUserTimestamps (20101218045609)
+Migrating to CreateSessions (20101218051508)
+Migrating to AddAuthorizationToken (20101218055250)
+Migrating to CreateItems (20101218095921)
+Migrating to CreateUserItems (20101218101102)
+Migrating to AddTypeToItems (20101218103714)
+Migrating to CreateExpenses (20101219083206)
+Migrating to AddHashedPasswordToUsers (20101225190752)
+Migrating to RemovePasswordFromUsers (20101225210549)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20101218045032)
+Migrating to AddUserTimestamps (20101218045609)
+Migrating to CreateSessions (20101218051508)
+Migrating to AddAuthorizationToken (20101218055250)
+Migrating to CreateItems (20101218095921)
+Migrating to CreateUserItems (20101218101102)
+Migrating to AddTypeToItems (20101218103714)
+Migrating to CreateExpenses (20101219083206)
+Migrating to AddHashedPasswordToUsers (20101225190752)
+Migrating to RemovePasswordFromUsers (20101225210549)
+  [4;35;1mSQL (226.6ms)[0m   [0mALTER TABLE `users` DROP `password`[0m
+  [4;36;1mSQL (19.8ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20101225210549')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `expenses`[0m
+  [4;35;1mSQL (9.8ms)[0m   [0mdescribe `expenses`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `expenses`[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `items`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `sessions`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `sessions`[0m
+  [4;36;1mSQL (10.6ms)[0m   [0;1mSHOW KEYS FROM `sessions`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW FIELDS FROM `user_items`[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mdescribe `user_items`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `user_items`[0m
+  [4;36;1mSQL (32.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:37:48) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (4.4ms)
+
+ActionView::TemplateError (undefined method `password' for #<User:0xb6ea5d9c>) on line #6 of app/views/user/_password_field_row.html.erb:
+3:   <label for="<%= field %>">
+4:     <%= field_title || field.humanize %>:
+5:   </label>
+6:   <%= form.password_field field,
+7:                           :size =>      User::PASSWORD_SIZE,
+8:                           :maxlength => User::PASSWORD_MAX_LENGTH %>
+9: </div>
+
+    app/views/user/_password_field_row.html.erb:6
+    app/views/user/login.html.erb:8
+    app/views/user/login.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (126.4ms)
+Rendered rescues/_request_and_response (2.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:40:35) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.7ms)
+
+ActionView::TemplateError (wrong number of arguments (3 for 2)) on line #6 of app/views/user/_password_field_row.html.erb:
+3:   <label for="<%= field %>">
+4:     <%= field_title || field.humanize %>:
+5:   </label>
+6:   <%= form.password_field "user", "password",
+7:                           :size =>      User::PASSWORD_SIZE,
+8:                           :maxlength => User::PASSWORD_MAX_LENGTH %>
+9: </div>
+
+    app/views/user/_password_field_row.html.erb:6:in `password_field'
+    app/views/user/_password_field_row.html.erb:6
+    app/views/user/login.html.erb:8
+    app/views/user/login.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:40:45) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.6ms)
+
+ActionView::TemplateError (undefined method `password' for #<User:0xb6d7be94>) on line #6 of app/views/user/_password_field_row.html.erb:
+3:   <label for="<%= field %>">
+4:     <%= field_title || field.humanize %>:
+5:   </label>
+6:   <%= form.password_field "password",
+7:                           :size =>      User::PASSWORD_SIZE,
+8:                           :maxlength => User::PASSWORD_MAX_LENGTH %>
+9: </div>
+
+    app/views/user/_password_field_row.html.erb:6
+    app/views/user/login.html.erb:8
+    app/views/user/login.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (201.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:41:41) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.9ms)
+
+ActionView::TemplateError (undefined method `user' for #<User:0xb6e3a18c>) on line #6 of app/views/user/_password_field_row.html.erb:
+3:   <label for="<%= field %>">
+4:     <%= field_title || field.humanize %>:
+5:   </label>
+6:   <%= form.password_field "user",
+7:                           :size =>      User::PASSWORD_SIZE,
+8:                           :maxlength => User::PASSWORD_MAX_LENGTH %>
+9: </div>
+
+    app/views/user/_password_field_row.html.erb:6
+    app/views/user/login.html.erb:8
+    app/views/user/login.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (197.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:42:14) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.8ms)
+
+ActionView::TemplateError (undefined method `password' for #<User:0xb6f04f18>) on line #6 of app/views/user/_password_field_row.html.erb:
+3:   <label for="<%= field %>">
+4:     <%= field_title || field.humanize %>:
+5:   </label>
+6:   <%= password_field "user", "password",
+7:                           :size =>      User::PASSWORD_SIZE,
+8:                           :maxlength => User::PASSWORD_MAX_LENGTH %>
+9: </div>
+
+    app/views/user/_password_field_row.html.erb:6
+    app/views/user/login.html.erb:8
+    app/views/user/login.html.erb:2
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (53.5ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:49:52) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (3.2ms)
+Rendered user/_password_field_row (0.6ms)
+Completed in 34ms (View: 16, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:49:56) [GET]
+Rendering template within layouts/application
+Rendering user/forgot_password
+Completed in 60ms (View: 55, DB: 1) | 200 OK [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#forgot_password (for 127.0.0.1 at 2010-12-26 02:50:01) [POST]
+  Parameters: {"commit"=>"Send Password", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"email"=>"sabarishsankar89@gmail.com"}}
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`email` = 'sabarishsankar89@gmail.com') LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Update (29.3ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-12-25 21:20:01', `salt` = 'wvGjYnsWRp', `hashed_password` = '77fc9c4e9783b312c99e7a487075dcf8f35b138d' WHERE `id` = 15[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCOMMIT[0m
+Rendered user_mailer/_footer (1.1ms)
+Rendered user_mailer/_footer (10.2ms)
+Sent mail to sabarishsankar89@gmail.com
+
+Date: Sun, 26 Dec 2010 02:50:01 +0530
+From: PGTracker <pgtracker@gmail.com>
+Reply-To: To <pgtracker@gmail.com>
+To: sabarishsankar89@gmail.com
+Subject: PGTracker - Forgot Password
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary=mimepart_4d16600127055_222f..fdb73bddc1b
+
+
+--mimepart_4d16600127055_222f..fdb73bddc1b
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+Please note the following login details of your PGtracker
+Screen Name: sabarish
+Password: DIGgSuzu5P
+Please login into pgtracker.heroku.com and change your password
+Regards,
+PGTracker=
+
+--mimepart_4d16600127055_222f..fdb73bddc1b
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: Quoted-printable
+Content-Disposition: inline
+
+<div style=3D"width:100%; color: #000000; width:100%;">  =
+
+  Please note the following login details of your PGtracker<br/><br/>
+  <b>Screen Name: </b>sabarish
+  <br/><br/>
+  <b>Password: </b>DIGgSuzu5P
+  <br/><br/>
+  Please login into pgtracker.heroku.com and change your password
+  <br/><br/>
+  <br/><br/>Regards,<br/>
+PGTracker
+</div>=
+
+--mimepart_4d16600127055_222f..fdb73bddc1b--
+Redirected to http://localhost:3000/
+Completed in 5449ms (DB: 34) | 302 Found [http://localhost/user/forgot_password]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:50:06) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (3.1ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 33ms (View: 13, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 02:50:25) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"DIGgSuzu5P", "screen_name"=>"sabarish"}}
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 25ms (DB: 3) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 02:50:25) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 54ms (View: 34, DB: 2) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:50:59) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/models/user.rb:120:in `encrypt'
+  app/models/user.rb:100:in `password='
+  app/models/user.rb:54:in `clear_password!'
+  app/controllers/user_controller.rb:70:in `edit'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (77.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:53:20) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (4.4ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (1.3ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 65ms (View: 46, DB: 1) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:53:49) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.9ms)
+Rendered user/_password_field_row (0.8ms)
+Rendered user/_password_field_row (0.7ms)
+Rendered user/_password_field_row (0.7ms)
+Completed in 96ms (View: 37, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:56:28) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 55ms (View: 12, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 02:56:35) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 27ms (View: 7, DB: 2) | 200 OK [http://localhost/user]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:56:37) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (2.7ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 32ms (View: 13, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:56:56) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.7ms)
+Rendered user/_password_field_row (0.6ms)
+Rendered user/_password_field_row (0.7ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 58ms (View: 14, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 02:57:25) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.6ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 68ms (View: 14, DB: 6) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:01:09) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 110ms (View: 47, DB: 3) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:01:12) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (4.6ms)
+Rendered user/_password_field_row (1.7ms)
+Rendered user/_password_field_row (1.2ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 63ms (View: 40, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:01:40) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.7ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 17081ms (View: 41, DB: 3) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:02:41) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 94ms (View: 8, DB: 1) | 200 OK [http://localhost/user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:02:44) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (2.9ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.9ms)
+Completed in 34ms (View: 14, DB: 1) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-12-26 03:02:50) [GET]
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/user/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:02:50) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (21.7ms)
+Rendered user/_password_field_row (0.7ms)
+Completed in 76ms (View: 58, DB: 1) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:02:56) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"kishore", "screen_name"=>"sabarish"}}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (1.2ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 32ms (View: 8, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:03:11) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"DIGgSuzu5P", "screen_name"=>"sabarish"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 24ms (DB: 2) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:03:11) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 31ms (View: 8, DB: 3) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:04:04) [GET]
+  [4;36;1mUser Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (2.6ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 33ms (View: 12, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:04:13) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.8ms)
+Rendered user/_password_field_row (1.4ms)
+Rendered user/_password_field_row (0.7ms)
+Rendered user/_password_field_row (0.7ms)
+Completed in 97ms (View: 16, DB: 6) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:04:52) [GET]
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 90ms (View: 54, DB: 2) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:04:54) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (4.4ms)
+Rendered user/_password_field_row (1.9ms)
+Rendered user/_password_field_row (1.3ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 58ms (View: 38, DB: 1) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:05:09) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (4.2ms)
+Rendered user/_password_field_row (0.8ms)
+Rendered user/_password_field_row (0.6ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 127946ms (View: 32, DB: 3) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:09:44) [GET]
+  [4;35;1mUser Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 105ms (View: 44, DB: 6) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:09:46) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (3.4ms)
+Rendered user/_password_field_row (1.8ms)
+Rendered user/_password_field_row (1.4ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 54ms (View: 39, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:09:59) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.6ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.3ms)
+Rendered user/_password_field_row (0.3ms)
+Completed in 77ms (View: 13, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:11:14) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 60ms (View: 24, DB: 2) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:11:15) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (3.6ms)
+Rendered user/_password_field_row (1.5ms)
+Rendered user/_password_field_row (1.2ms)
+Rendered user/_password_field_row (0.4ms)
+Completed in 47ms (View: 26, DB: 3) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:11:30) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password"=>"kishore"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (0.8ms)
+Rendered user/_password_field_row (0.7ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_confirmation_field_row (1.7ms)
+Completed in 233975ms (View: 26, DB: 2) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:15:38) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 64ms (View: 25, DB: 4) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:15:40) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (3.4ms)
+Rendered user/_password_field_row (1.6ms)
+Rendered user/_password_field_row (1.3ms)
+Rendered user/_password_confirmation_field_row (1.7ms)
+Completed in 54ms (View: 34, DB: 1) | 200 OK [http://localhost/user/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:15:40) [GET]
+  [4;35;1mUser Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/edit
+Rendered user/_email_field_row (2.6ms)
+Rendered user/_password_field_row (0.5ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_confirmation_field_row (0.4ms)
+Completed in 33ms (View: 12, DB: 1) | 200 OK [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#edit (for 127.0.0.1 at 2010-12-26 03:15:51) [POST]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "attribute"=>"password", "user"=>{"password_confirmation"=>"kishore", "password"=>"kishore"}}
+  [4;36;1mUser Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-12-25 21:45:51', `hashed_password` = '5dfe5a000313ffef37eb2a601d695f00de498d99' WHERE `id` = 15[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (40.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish' AND `users`.id <> 15) LIMIT 1[0m
+  [4;35;1mUser Exists (0.9ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@gmail.com' AND `users`.id <> 15) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/user
+Completed in 6074ms (DB: 46) | 302 Found [http://localhost/user/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:15:57) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 29ms (View: 9, DB: 2) | 200 OK [http://localhost/user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-12-26 03:16:06) [GET]
+Redirected to http://localhost:3000/
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/user/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:16:06) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (12.6ms)
+Rendered user/_password_field_row (0.8ms)
+Completed in 50ms (View: 32, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:16:13) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"kishore", "screen_name"=>"sabarish"}}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 40ms (DB: 2) | 302 Found [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:16:13) [GET]
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 27ms (View: 8, DB: 2) | 200 OK [http://localhost/user]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-12-26 03:16:18) [GET]
+Redirected to http://localhost:3000/
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/user/logout]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:16:18) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (4.1ms)
+Rendered user/_password_field_row (0.7ms)
+Completed in 32ms (View: 14, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#register (for 127.0.0.1 at 2010-12-26 03:16:20) [GET]
+Rendering template within layouts/application
+Rendering user/register
+Rendered user/_screen_name_field_row (81.5ms)
+Rendered user/_email_field_row (0.4ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_confirmation_field_row (0.4ms)
+Completed in 101ms (View: 96, DB: 1) | 200 OK [http://localhost/user/register]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#register (for 127.0.0.1 at 2010-12-26 03:16:41) [POST]
+  Parameters: {"commit"=>"Register!", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"password_confirmation"=>"kishore", "password"=>"kishore", "email"=>"sabarishsankar89@yahoo.co.in", "screen_name"=>"sabarish1"}}
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (`users`.`screen_name` = BINARY 'sabarish1') LIMIT 1[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (`users`.`email` = BINARY 'sabarishsankar89@yahoo.co.in') LIMIT 1[0m
+  [4;36;1mUser Create (38.9ms)[0m   [0;1mINSERT INTO `users` (`salt`, `created_at`, `updated_at`, `hashed_password`, `screen_name`, `email`, `authorization_token`) VALUES('xjZ42T2KFv', '2010-12-25 21:46:41', '2010-12-25 21:46:41', '8939f252b7e3ffb2dea305eb6793753cab3fbdcf', 'sabarish1', 'sabarishsankar89@yahoo.co.in', NULL)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sabarish1') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 74ms (DB: 43) | 302 Found [http://localhost/user/register]
+  [4;35;1mSQL (3.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:16:41) [GET]
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 20) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 32ms (View: 11, DB: 6) | 200 OK [http://localhost/user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing ItemController#index (for 127.0.0.1 at 2010-12-26 03:16:45) [GET]
+  [4;35;1mUser Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 20) [0m
+  [4;35;1mUserItem Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `user_items`[0m
+  [4;36;1mUserItem Load (15.8ms)[0m   [0;1mSELECT * FROM `user_items` WHERE (`user_items`.`user_id` = 20) [0m
+  [4;35;1mItem Load (26.3ms)[0m   [0mSELECT * FROM `items` WHERE (id IN (NULL)) [0m
+  [4;36;1mItem Load (55.2ms)[0m   [0;1mSELECT * FROM `items` WHERE ((id IN (NULL) OR user_id = 20) AND name like '%%') ORDER BY transaction_date DESC LIMIT 0, 10[0m
+Rendering template within layouts/application
+Rendering item/index
+  [4;35;1mItem Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `items`[0m
+  [4;36;1mItem Load (0.4ms)[0m   [0;1mSELECT * FROM `items` WHERE (`items`.`user_id` = 20) [0m
+Rendered item/_credit_field_row (20.2ms)
+Rendered item/_header_field_row (9212.9ms)
+Completed in 9501ms (View: 9311, DB: 109) | 200 OK [http://localhost/item]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-12-26 03:17:56) [GET]
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/user/logout]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:17:56) [GET]
+  [4;35;1mUser Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.7ms)
+Rendered user/_password_field_row (0.6ms)
+Completed in 29ms (View: 10, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:18:03) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"12345", "screen_name"=>"sathish"}}
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sathish') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 31ms (View: 7, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:18:17) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"12345", "screen_name"=>"viveK"}}
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (screen_name = 'viveK') LIMIT 1[0m
+
+TypeError (can't convert nil into String):
+  app/models/user.rb:120:in `+'
+  app/models/user.rb:120:in `encrypt'
+  app/models/user.rb:106:in `authenticate'
+  app/controllers/user_controller.rb:24:in `login'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (79.7ms)
+Rendered rescues/_request_and_response (11.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:20:32) [GET]
+  [4;35;1mUser Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (4.3ms)
+Rendered user/_password_field_row (0.8ms)
+Completed in 58ms (View: 17, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:20:39) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"123", "screen_name"=>"viveK"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'viveK') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (0.5ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:20:46) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"123", "screen_name"=>"vivek"}}
+  [4;36;1mUser Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (screen_name = 'vivek') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (0.5ms)
+Rendered user/_password_field_row (0.7ms)
+Completed in 32ms (View: 9, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:20:58) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wb/sNnTvy1F02EFCPw0IGVFAGG7Rk2jQ6dO4SNWzbV8=", "user"=>{"remember_me"=>"0", "password"=>"kishore", "screen_name"=>"sabarish"}}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (screen_name = 'sabarish') LIMIT 1[0m
+Redirected to http://localhost:3000/user
+Completed in 24ms (DB: 2) | 302 Found [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#index (for 127.0.0.1 at 2010-12-26 03:20:59) [GET]
+  [4;36;1mUser Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering user/index
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/user]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#logout (for 127.0.0.1 at 2010-12-26 03:21:05) [GET]
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 1) | 302 Found [http://localhost/user/logout]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:21:05) [GET]
+  [4;36;1mUser Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (4.6ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 30ms (View: 13, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#register (for 127.0.0.1 at 2010-12-26 03:22:23) [GET]
+Rendering template within layouts/application
+Rendering user/register
+Rendered user/_screen_name_field_row (0.5ms)
+Rendered user/_email_field_row (0.4ms)
+Rendered user/_password_field_row (0.4ms)
+Rendered user/_password_confirmation_field_row (0.4ms)
+Completed in 25ms (View: 21, DB: 1) | 200 OK [http://localhost/user/register]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+DEPRECATION WARNING: Disabling sessions for a single controller has been deprecated. Sessions are now lazy loaded. So if you don't access them, consider them off. You can still modify the session cookie options with request.session_options.. (called from /home/sabarish/Desktop/pg_db/app/controllers/application_controller.rb:11)
+
+
+Processing UserController#login (for 127.0.0.1 at 2010-12-26 03:22:38) [GET]
+  [4;35;1mUser Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering user/login
+Rendered user/_screen_name_field_row (2.8ms)
+Rendered user/_password_field_row (0.5ms)
+Completed in 31ms (View: 11, DB: 3) | 200 OK [http://localhost/]

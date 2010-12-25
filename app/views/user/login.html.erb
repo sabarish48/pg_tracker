@@ -11,7 +11,7 @@
       <%= form.check_box :remember_me %>
   </div>
   <div class="form_row">
-    <%= submit_tag "Login", :class => "submit" %>
+    <%= submit_tag "Login", :class => "submit" %> <%= link_to "Forgot Password?", :action => "forgot_password" %>
   </div>
 </fieldset>
 <% end %>
