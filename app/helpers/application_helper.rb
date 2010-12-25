@@ -16,5 +16,24 @@ module ApplicationHelper
   def initialize_calendar
     javascript_tag "setTimeout('Calendar.initCalendar()', 250);"
   end
+  
+  def sort_th_class_helper(param)
+    result = 'class="sortup"' if params[:sort] == param
+    result = 'class="sortdown"' if params[:sort] == param + "_reverse"
+    return result || 'class="sortup"'
+  end
+  
+  def sort_link_helper(text, param)
+    key = param
+    key += "_reverse" if params[:sort] == param
+    options = {
+      :url => {:action => 'index', :params => params.merge({:sort => key, :page => nil})}
+    }
+    html_options = {
+      :title => "Sort by this field",
+      :href => url_for(:action => 'index', :params => params.merge({:sort => key, :page => nil}))
+    }
+    link_to_remote(text, options, html_options)
+  end
 
 end

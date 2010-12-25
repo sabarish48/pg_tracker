@@ -16,4 +16,11 @@ class Item < ActiveRecord::Base
   def validate
     errors.add(:amount, "must be valid.") unless amount > 0    
   end
+
+  def self.search(search, page)
+    paginate :per_page => 2, :page => page,
+      :conditions => ['name like ?', "%#{search}%"],
+      :order => 'name'
+  end
+
 end

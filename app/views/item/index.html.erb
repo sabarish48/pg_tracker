@@ -1,3 +1,7 @@
+<%= link_to "Add New Transaction", :action => "new" %><br/><br/>
+<%= link_to "View All User Credits", :controller => "user", :action => "show" %>
+<br/><br/>
+
 <% form_for :user do |form| %>
   <fieldset>
     <legend>Your Total Credit </legend>
@@ -6,13 +10,13 @@
   </fieldset>
 <% end %>
 <br/>
+
 <% form_for :item do |form| %>
   <fieldset>
     <legend>Your Transaction Details</legend>
-      <%= render :partial => "header_field_row",
+    Transaction Name: <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'search', :name => nil %><br/><br/>
+    <%= render :partial => "header_field_row",
              :locals  => { :form => form, :all_items =>@all_items, :user => @user } %>
   </fieldset>
 <% end %>
-<br/><br/>
-<%= link_to "Add New Transaction", :action => "new" %><br/><br/>
-<%= link_to "View All User Credits", :controller => "user", :action => "show" %>

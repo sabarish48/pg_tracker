@@ -13,9 +13,20 @@ class ItemController < ApplicationController
     @title = "Your Transactions"
     @user = User.find(session[:user_id])
     user_items = UserItem.find_all_by_user_id(@user.id).collect(&:item_id)
-    @items = Item.find(:all, :conditions => ["id IN (?)", user_items])
-    @all_items = Item.find(:all, :conditions => ["id IN (?) OR user_id = ?", user_items, @user.id])
-    # This will be a protected page for viewing user information.
+    @items = Item.find(:all, :conditions => ["id IN (?)", user_items])    
+    current_page = (params[:page] || 1).to_i
+
+    sort = case params[:sort]
+    when "name"  then "name"
+    when "user_id"   then "user_id"
+    when "amount" then "amount"
+    when "date" then "transaction_date"
+    when "name_reverse"  then "name DESC"
+    when "user_id_reverse"  then "user_id DESC"
+    when "amount_reverse"   then "amount DESC"
+    when "date_reverse" then "transaction_date DESC"
+    end
+    @all_items = Item.paginate(:all, :conditions => ["(id IN (?) OR user_id = ?) AND name like ?", user_items, @user.id, "%#{params[:search]}%"], :order => sort, :page => current_page, :per_page => 10)
   end
 
   def new

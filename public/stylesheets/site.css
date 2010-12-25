@@ -84,6 +84,28 @@ label {
   padding-bottom: .5em;
 }
 
+.form_row th{
+    background-color: #827B60;
+    padding-right: 30px;
+}
+
+.form_row th.sortup{
+    background: transparent url(/images/arrow_up.gif) right no-repeat;
+    background-color: #827B60;
+    padding-right: 30px;    
+}
+
+.form_row th a{
+    text-decoration: none
+}
+
+.form_row th.sortdown{
+    background: transparent url(/images/arrow_down.gif) right no-repeat;
+    background-color: #827B60;
+    padding-right: 30px;
+    text-decoration: none
+}
+
 .form_row #record_users_{
   margin-left: 165px;
   margin-bottom: 10px;
