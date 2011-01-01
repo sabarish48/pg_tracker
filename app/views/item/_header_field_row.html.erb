@@ -13,7 +13,7 @@
     </tr>
     <% all_items.each do |item| %>
       <tr>
-        <td><%= link_to item.name, :id => item.id, :action => "show" %></td>
+        <td><%= link_to string_truncate(item.name), :id => item.id, :action => "show" %></td>
         <td><%= User.find(item.user_id).screen_name %></td>
         <td align="right"><%= item.amount %></td>
         <td><%= item.transaction_date %></td>

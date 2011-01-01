@@ -35,5 +35,9 @@ module ApplicationHelper
     }
     link_to_remote(text, options, html_options)
   end
+    
+  def string_truncate(text, length = 30, truncate_string = "... ")
+    return (text.length > length) ? (text[0..(length-1)] + truncate_string) : text
+  end
 
 end
