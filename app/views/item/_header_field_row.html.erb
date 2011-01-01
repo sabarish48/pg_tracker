@@ -15,9 +15,9 @@
       <tr>
         <td><%= link_to string_truncate(item.name), :id => item.id, :action => "show" %></td>
         <td><%= User.find(item.user_id).screen_name %></td>
-        <td align="right"><%= item.amount %></td>
+        <td align="right"><%= item.amount.round_to(2) %></td>
         <td><%= item.transaction_date %></td>
-        <td align="right"><%= item.user_id == user.id ? UserItem.find_by_item_id_and_user_id(item.id, user.id).present? ? (UserItem.find_by_item_id_and_user_id(item.id, user.id).amount - item.amount) : -item.amount : UserItem.find_by_item_id_and_user_id(item.id, user.id).amount %></td>
+        <td align="right"><%= item.user_id == user.id ? UserItem.find_by_item_id_and_user_id(item.id, user.id).present? ? (UserItem.find_by_item_id_and_user_id(item.id, user.id).amount - item.amount).round_to(2) : (-item.amount).round_to(2) : UserItem.find_by_item_id_and_user_id(item.id, user.id).amount.round_to(2) %></td>
       </tr>
     <% end %>
   </table>

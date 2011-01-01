@@ -9,7 +9,7 @@
     <tr>
       <td><%= string_truncate(expense.name, 40) %> <%= link_to "  Delete",:id => expense.id, :action => "delete" %></td>
       <td><%= expense.expense_date %></td>
-      <td><%= expense.amount %></td>
+      <td><%= expense.amount.round_to(2) %></td>
     </tr>
   <% end %>
   </table>

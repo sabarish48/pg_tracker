@@ -11,7 +11,7 @@
           <%  got_amount +=  item.amount %>
         <% end %>
       <th > <%= user.screen_name %> </th>
-      <td align ="right"> <%= got_amount - paid_amount%> </td>
+      <td align ="right"> <%= (got_amount - paid_amount).round_to(2)%> </td>
     </tr>
     <% end %>
   </table>
