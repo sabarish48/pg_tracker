@@ -10,8 +10,8 @@ class UserMailer < ActionMailer::Base
   
   def birthday_notification(to_email, bdays)
     @recipients = "#{Trojans::EMAIL}"
-    @from = "Trojans <#{Trojans::FROM_EMAIL}>"
-    @reply_to = "To <#{Trojans::FROM_EMAIL}>"
+    @from = "TrojansLatest <#{PGTracker::FROM_EMAIL}>"
+    @reply_to = "To <#{PGTracker::FROM_EMAIL}>"
     @subject = "Happy Birthday"
     @sent_on = Time.now
     @body[:user] = to_email
