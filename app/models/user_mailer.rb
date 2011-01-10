@@ -7,6 +7,16 @@ class UserMailer < ActionMailer::Base
     @subject << 'Forgot Password'
     @body[:url] = "pgtracker.heroku.com"
   end
+  
+  def birthday_notification(to_email, bdays)
+    @recipients = "#{Trojans::EMAIL}"
+    @from = "Trojans <#{Trojans::FROM_EMAIL}>"
+    @reply_to = "To <#{Trojans::FROM_EMAIL}>"
+    @subject = "Happy Birthday"
+    @sent_on = Time.now
+    @body[:user] = to_email
+    @body[:bdays] = bdays
+  end
 
   protected
 

@@ -1,0 +1,12 @@
+<div style="width:100%; color: #000000; width:100%;">
+  <% @bdays.each do |bday|%>
+  <h3><%= "Wishing Many more happy returns of the day to" %></h3><br/>
+    <%= "#{bday.name}" %>
+    <br/><br/>
+    <%= "Completed Age " %> : <%= "#{Time.now.year - bday.date_of_birth.year}" %> <%= " yrs" %>
+    <br/><br/>    
+  <% end %>
+  <%= "Have a Successful year ahead :)" %><br/>
+  <br/><br/><%= "Regards," %><br/>
+  <%= "Your Friends (Trojans)" %>
+</div>

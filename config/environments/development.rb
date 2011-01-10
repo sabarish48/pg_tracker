@@ -26,8 +26,8 @@ config.action_mailer.smtp_settings = {
                     :domain         => "gmail.com",
                     :authentication => 'login',
                     :enable_starttls_auto => true,
-                    :user_name      => "pgtracker@gmail.com",
-                    :password       => "tracker2010"
+                    :user_name      => "trojans41.mailer@gmail.com",
+                    :password       => "trojans41"#tracker2010
 }
 
 # Don't care if the mailer can't send
