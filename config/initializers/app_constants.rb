@@ -1,7 +1,7 @@
 module PGTracker
   NAME  = "PGTracker"
-  EMAIL = "pgtracker@gmail.com"
-  FROM_EMAIL = "pgtracker@gmail.com"
+  EMAIL = "trojans41.mailer@gmail.com"
+  FROM_EMAIL = "trojans41.mailer@gmail.com"
 end
 
 module Trojans
