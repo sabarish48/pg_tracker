@@ -1,6 +1,6 @@
-<div style="width:100%; color: #000000; width:100%;">
-  <% @bdays.each do |bday|%>
+<div style="width:100%; color: #000000; width:100%;">  
   <h3><%= "Wishing Many more happy returns of the day to" %></h3><br/>
+  <% @bdays.each do |bday|%>
     <%= "#{bday.name}" %>
     <br/><br/>
     <%= "Completed Age " %> : <%= "#{Time.now.year - bday.date_of_birth.year}" %> <%= " yrs" %>
