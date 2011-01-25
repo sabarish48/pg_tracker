@@ -1,6 +1,6 @@
 module Trojans
   NAME  = "Trojans"
-  EMAIL = "my_own_creation@googlegroups.com"
+  EMAIL = "trojans41@googlegroups.com"
   FROM_EMAIL = "trojans41.mailer@gmail.com"
 end
 

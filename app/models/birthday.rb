@@ -5,7 +5,7 @@ class Birthday < ActiveRecord::Base
     puts "hello checking"
     Birthday.find(:all).each do |user|
       dob = user.date_of_birth
-      if dob.day == Time.now.day && dob.month == Time.now.month
+      if dob.day == (Time.now + 1.day).day && dob.month == (Time.now + 1.day).month
         puts "hello working #{user.name}"
         birthdays << user
       end
