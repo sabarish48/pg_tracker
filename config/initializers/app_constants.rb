@@ -1,11 +1,11 @@
 module Trojans
-  NAME  = "Trojans"
-  EMAIL = "trojans41@googlegroups.com"
-  FROM_EMAIL = "trojans41.mailer@gmail.com"
+  NAME  = "Proactiveprogrammerz"
+  EMAIL = "proactiveprogrammerz@googlegroups.com"
+  FROM_EMAIL = "pgtracker@gmail.com"
 end
 
 module PGTracker
   NAME  = "PGTracker"
-  EMAIL = "trojans41.mailer@gmail.com"
-  FROM_EMAIL = "trojans41.mailer@gmail.com"
+  EMAIL = "pgtracker@gmail.com"
+  FROM_EMAIL = "pgtracker@gmail.com"
 end
